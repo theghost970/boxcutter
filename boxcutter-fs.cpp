@@ -241,11 +241,15 @@ bool capture_screen(const char *filename, int x, int y, int x2, int y2)
 
 void get_screen_rect(RECT *rect)
 {
-    //GetWindowRect(GetDesktopWindow(), rect);
-    rect->left = 0;
-    rect->top = 0;
-    rect->right = 1920;
-    rect->bottom = 1080;
+  //GetWindowRect(GetDesktopWindow(), rect);
+	DEVMODE dm;
+	EnumDisplaySettings(NULL, ENUM_CURRENT_SETTINGS, &dm);
+	auto w = dm.dmPelsWidth;
+	auto h = dm.dmPelsHeight;
+  rect->left = 0;
+  rect->top = 0;
+  rect->right = w;
+  rect->bottom = h;
 }
 
 
