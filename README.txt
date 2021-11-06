@@ -1,6 +1,9 @@
   
   boxcutter
   Copyright Matt Rasmussen 2008-2011
+  
+  The original version made cropped screenshots due to DPI issues... I fixed that using Window's EnumDisplaySettings API.
+  Now it auto-detects the correct resolution no matter what DPI is set. It will take a screenshot with no issues.
 
 boxcutter is a minimal Windows command line screenshot
 application. It requires and accepts a single argument: the file name
